@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#0D4521"
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:id="@+id/nav_inicio"
+            android:icon="@drawable/circle_green"
+            android:title="@string/menu_inicio" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_pendientes"
+            android:icon="@drawable/circle_green"
+            android:title="@string/menu_pendientes" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_cobro"
+            android:icon="@drawable/circle_green"
+            android:title="@string/menu_cobro" />
+
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/circle_green"
+            android:title="@string/menu_chat" />
+
+        <item
+            android:id="@+id/nav_salir"
+            android:icon="@drawable/circle_red"
+            android:title="@string/menu_salir" />
+
+
     </group>
 </menu>
