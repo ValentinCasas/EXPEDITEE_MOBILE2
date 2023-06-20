@@ -4,14 +4,12 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class CobroViewModel extends AndroidViewModel {
+public class MercadoPagoViewModel extends AndroidViewModel {
 
 
-    public CobroViewModel(@NonNull Application application) {
+    public MercadoPagoViewModel(@NonNull Application application) {
         super(application);
     }
 }

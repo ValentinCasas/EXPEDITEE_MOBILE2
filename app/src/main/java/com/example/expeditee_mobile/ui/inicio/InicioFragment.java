@@ -15,17 +15,16 @@ import com.example.expeditee_mobile.databinding.FragmentInicioBinding;
 public class InicioFragment extends Fragment {
 
     private FragmentInicioBinding binding;
-
+    private InicioViewModel mv;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         InicioViewModel homeViewModel =
                 new ViewModelProvider(this).get(InicioViewModel.class);
 
         binding = FragmentInicioBinding.inflate(inflater, container, false);
+        mv = new ViewModelProvider(this).get(InicioViewModel.class);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

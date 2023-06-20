@@ -11,21 +11,21 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.expeditee_mobile.databinding.FragmentCobroBinding;
+import com.example.expeditee_mobile.ui.pendientes.PendientesViewModel;
 
 public class CobroFragment extends Fragment {
 
     private FragmentCobroBinding binding;
-
+    private CobroViewModel mv;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         CobroViewModel slideshowViewModel =
                 new ViewModelProvider(this).get(CobroViewModel.class);
 
         binding = FragmentCobroBinding.inflate(inflater, container, false);
+        mv = new ViewModelProvider(this).get(CobroViewModel.class);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

@@ -10,11 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.expeditee_mobile.LoginActivity2ViewModel;
 import com.example.expeditee_mobile.databinding.FragmentPendientesBinding;
 
 public class PendientesFragment extends Fragment {
 
     private FragmentPendientesBinding binding;
+    private PendientesViewModel mv;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -22,10 +24,9 @@ public class PendientesFragment extends Fragment {
                 new ViewModelProvider(this).get(PendientesViewModel.class);
 
         binding = FragmentPendientesBinding.inflate(inflater, container, false);
+        mv = new ViewModelProvider(this).get(PendientesViewModel.class);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

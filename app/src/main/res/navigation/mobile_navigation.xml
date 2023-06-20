@@ -15,11 +15,80 @@
         android:id="@+id/nav_pendientes"
         android:name="com.example.expeditee_mobile.ui.pendientes.PendientesFragment"
         android:label="@string/menu_pendientes"
-        tools:layout="@layout/fragment_pendientes" />
+        tools:layout="@layout/fragment_pendientes" >
+        <action
+            android:id="@+id/action_nav_pendientes_to_nav_ubicacion"
+            app:destination="@id/nav_ubicacion" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_cobro"
         android:name="com.example.expeditee_mobile.ui.cobro.CobroFragment"
         android:label="@string/menu_cobro"
-        tools:layout="@layout/fragment_cobro" />
+        tools:layout="@layout/fragment_cobro" >
+        <action
+            android:id="@+id/action_nav_cobro_to_nav_efectivo"
+            app:destination="@id/nav_efectivo" />
+        <action
+            android:id="@+id/action_nav_cobro_to_nav_mercadoPago"
+            app:destination="@id/nav_mercadoPago" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_ubicacion"
+        android:name="com.example.expeditee_mobile.ui.pendientes.UbicacionFragment"
+        android:label="@string/ubicacion"
+        tools:layout="@layout/fragment_ubicacion" >
+        <action
+            android:id="@+id/action_nav_ubicacion_to_nav_pendientes"
+            app:destination="@id/nav_pendientes" />
+        <action
+            android:id="@+id/action_nav_ubicacion_to_nav_cobroPendiente"
+            app:destination="@id/nav_cobroPendiente" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_cobroPendiente"
+        android:name="com.example.expeditee_mobile.ui.pendientes.CobroPendienteFragment"
+        android:label="@string/cobro_pendiente"
+        tools:layout="@layout/fragment_cobro_pendiente" >
+        <action
+            android:id="@+id/action_nav_cobroPendiente_to_nav_ubicacion"
+            app:destination="@id/nav_ubicacion" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_efectivo"
+        android:name="com.example.expeditee_mobile.ui.cobro.EfectivoFragment"
+        android:label="@string/efectivo"
+        tools:layout="@layout/fragment_efectivo" >
+        <action
+            android:id="@+id/action_nav_efectivo_to_nav_cobro"
+            app:destination="@id/nav_cobro" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_mercadoPago"
+        android:name="com.example.expeditee_mobile.ui.cobro.MercadoPagoFragment"
+        android:label="@string/mercado_pago"
+        tools:layout="@layout/fragment_mercado_pago" >
+        <action
+            android:id="@+id/action_nav_mercadoPago_to_nav_cobro"
+            app:destination="@id/nav_cobro" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_chat"
+        android:name="com.example.expeditee_mobile.ui.chat.ChatFragment"
+        android:label="@string/chat"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_nav_chat_to_nav_contactos"
+            app:destination="@id/nav_contactos" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_contactos"
+        android:name="com.example.expeditee_mobile.ui.chat.ContactosFragment"
+        android:label="@string/contactos"
+        tools:layout="@layout/fragment_contactos" >
+        <action
+            android:id="@+id/action_nav_contactos_to_nav_chat"
+            app:destination="@id/nav_chat" />
+    </fragment>
 </navigation>
