@@ -1,13 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:background="#2CBD60"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.cobro.EfectivoFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+    <ImageView
+        android:id="@+id/iv_expeditee"
+        android:layout_width="201dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/logo_expeditee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tvMonto"
+        android:layout_width="229dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="76dp"
+        android:text="$ 5200.75"
+        android:textColor="#0E2215"
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_expeditee" />
+
+    <Button
+        android:id="@+id/btnMarcarPagado"
+        android:layout_width="410dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="80dp"
+        android:text="MARCAR COMO PAGADO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonto" />
+
+    <Button
+        android:id="@+id/btnMarcarEntregado"
+        android:layout_width="410dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="4dp"
+        android:text="IR A MARCAR COMO ENTREGADO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMarcarPagado" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
