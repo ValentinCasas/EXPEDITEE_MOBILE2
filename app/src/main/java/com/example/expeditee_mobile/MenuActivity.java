@@ -29,13 +29,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMenu.toolbar);
-        binding.appBarMenu.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -44,12 +38,7 @@ public class MenuActivity extends AppCompatActivity {
                     R.id.nav_inicio,
                     R.id.nav_pendientes,
                     R.id.nav_cobro,
-                    R.id.nav_ubicacion,
-                    R.id.nav_cobroPendiente,
-                    R.id.nav_mercadoPago,
-                    R.id.nav_efectivo,
-                    R.id.nav_contactos,
-                    R.id.nav_chat)
+                    R.id.nav_contactos)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu);

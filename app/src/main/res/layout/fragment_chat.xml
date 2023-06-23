@@ -24,8 +24,8 @@
             android:id="@+id/iv_expeditee"
             android:layout_width="201dp"
             android:layout_height="45dp"
-            android:layout_marginTop="40dp"
             android:src="@drawable/logo_expeditee"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -39,12 +39,11 @@
         android:background="#219B4D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-        app:layout_constraintVertical_bias="0.023">
+        app:layout_constraintVertical_bias="0.02">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvLista"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,6 +75,7 @@
         android:layout_width="116dp"
         android:layout_height="77dp"
         android:text="ENVIAR"
+        android:textColor="#8DECB0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

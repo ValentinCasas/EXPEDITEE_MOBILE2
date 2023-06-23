@@ -19,7 +19,7 @@
             android:title="@string/menu_cobro" />
 
         <item
-            android:id="@+id/nav_chat"
+            android:id="@+id/nav_contactos"
             android:icon="@drawable/circle_green"
             android:title="@string/menu_chat" />
 

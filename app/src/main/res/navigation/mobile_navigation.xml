@@ -54,6 +54,12 @@
         <action
             android:id="@+id/action_nav_cobroPendiente_to_nav_ubicacion"
             app:destination="@id/nav_ubicacion" />
+        <action
+            android:id="@+id/action_nav_cobroPendiente_to_nav_mercadoPago"
+            app:destination="@id/nav_mercadoPago" />
+        <action
+            android:id="@+id/action_nav_cobroPendiente_to_nav_efectivo"
+            app:destination="@id/nav_efectivo" />
     </fragment>
     <fragment
         android:id="@+id/nav_efectivo"
@@ -63,6 +69,9 @@
         <action
             android:id="@+id/action_nav_efectivo_to_nav_cobro"
             app:destination="@id/nav_cobro" />
+        <action
+            android:id="@+id/action_nav_efectivo_to_nav_cobroPendiente"
+            app:destination="@id/nav_cobroPendiente" />
     </fragment>
     <fragment
         android:id="@+id/nav_mercadoPago"
@@ -72,6 +81,9 @@
         <action
             android:id="@+id/action_nav_mercadoPago_to_nav_cobro"
             app:destination="@id/nav_cobro" />
+        <action
+            android:id="@+id/action_nav_mercadoPago_to_nav_cobroPendiente"
+            app:destination="@id/nav_cobroPendiente" />
     </fragment>
     <fragment
         android:id="@+id/nav_chat"

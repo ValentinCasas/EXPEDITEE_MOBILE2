@@ -11,8 +11,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="410dp"
-        android:layout_height="555dp"
+        android:layout_width="wrap_content"
+        android:layout_height="605dp"
         android:background="#197A3C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,14 +22,14 @@
 
         <ImageView
             android:id="@+id/ivCliente"
-            android:layout_width="409dp"
-            android:layout_height="286dp"
+            android:layout_width="431dp"
+            android:layout_height="340dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            android:src="@drawable/celular_expeditee"
+            android:src="@drawable/hombre3"
             app:layout_constraintDimensionRatio="H,1:1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,18 +78,18 @@
 
         <Button
             android:id="@+id/btnUbicacion"
-            android:layout_width="217dp"
-            android:layout_height="106dp"
+            android:layout_width="238dp"
+            android:layout_height="123dp"
+            android:layout_marginTop="32dp"
             android:paddingTop="0dp"
             android:paddingBottom="0dp"
             android:text="Efectivo"
+            android:textColor="#8DECB0"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/ivMercadoPago"
-            app:layout_constraintTop_toBottomOf="@+id/tvTelefono"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTelefono" />
 
         <ImageView
             android:id="@+id/ivMercadoPago"
@@ -103,7 +103,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTelefono"
             app:layout_constraintVertical_bias="1.0"
-            tools:srcCompat="@drawable/mercado_pago_completo" />
+            android:src="@drawable/mercado_pago_completo" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -3,23 +3,24 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="170dp"
-    android:layout_height="220dp"
+    android:layout_width="175dp"
+    android:layout_height="255dp"
+    android:layout_margin="8dp"
     app:cardElevation="4dp"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_width="175dp"
+        android:layout_height="255dp"
         android:background="#197A3C">
 
         <ImageView
             android:id="@+id/ivCliente"
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
+            android:layout_width="174dp"
+            android:layout_height="131dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            android:src="@drawable/celular_expeditee"
+            android:src="@drawable/hombre3"
             app:layout_constraintDimensionRatio="H,1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -32,13 +33,14 @@
             android:layout_height="wrap_content"
             android:text="Pepito Ruiz"
             android:textColor="#8DECB0"
-            android:textSize="10sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.02"
+            app:layout_constraintHorizontal_bias="0.067"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivCliente"
-            app:layout_constraintVertical_bias="0.017" />
+            app:layout_constraintVertical_bias="0.019" />
+
 
         <TextView
             android:id="@+id/tvDireccion"
@@ -46,13 +48,13 @@
             android:layout_height="wrap_content"
             android:text="Lic 22 mzna 11 casa 17"
             android:textColor="#66C689"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.026"
+            app:layout_constraintHorizontal_bias="0.098"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvNombre"
-            app:layout_constraintVertical_bias="0.076" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvTelefono"
@@ -60,43 +62,43 @@
             android:layout_height="wrap_content"
             android:text="2665018537"
             android:textColor="#66C689"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.019"
+            app:layout_constraintHorizontal_bias="0.059"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvDireccion"
-            app:layout_constraintVertical_bias="0.093" />
-
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/btnEfectivo"
-            android:layout_width="85dp"
-            android:layout_height="63dp"
+            android:layout_width="91dp"
+            android:layout_height="62dp"
             android:layout_marginTop="8dp"
             android:paddingTop="0dp"
             android:paddingBottom="0dp"
             android:text="Efectivo"
-            android:textSize="7sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#8DECB0"
+            android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/ivMercadoPago"
             app:layout_constraintTop_toBottomOf="@+id/tvTelefono" />
 
         <ImageView
-            android:id="@+id/ivMercadoPago"
-            android:layout_width="85dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="8dp"
-            android:background="#ffffff"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTelefono"
-            app:layout_constraintVertical_bias="1.0"
-            tools:srcCompat="@drawable/mercado_pago_logo" />
+        android:id="@+id/ivMercadoPago"
+        android:layout_width="85dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTelefono"
+        app:layout_constraintVertical_bias="1.0"
+        android:src="@drawable/mercado_pago_logo" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
