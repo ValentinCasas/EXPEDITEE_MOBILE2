@@ -24,14 +24,12 @@ public class PendientesFragment extends Fragment {
     private FragmentPendientesBinding binding;
     private PendientesViewModel mv;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        PendientesViewModel galleryViewModel =
-                new ViewModelProvider(this).get(PendientesViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        PendientesViewModel mv = new ViewModelProvider(this).get(PendientesViewModel.class);
 
         binding = FragmentPendientesBinding.inflate(inflater, container, false);
-        mv = new ViewModelProvider(this).get(PendientesViewModel.class);
         View root = binding.getRoot();
+
 
         mv.getPendientes().observe(getViewLifecycleOwner(), new Observer<ArrayList<Usuario>>() {
             @Override
@@ -46,11 +44,12 @@ public class PendientesFragment extends Fragment {
             }
         });
 
-
-
         mv.obtenerClientesPendientes();
+
 
         return root;
     }
+
+
 
 }

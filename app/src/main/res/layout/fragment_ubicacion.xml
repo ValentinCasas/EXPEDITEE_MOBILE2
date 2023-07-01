@@ -8,19 +8,19 @@
     android:background="#2CBD60"
     tools:context=".ui.pendientes.UbicacionFragment" >
 
+
     <ImageView
         android:id="@+id/ivCliente"
-        android:layout_width="191dp"
-        android:layout_height="210dp"
+        android:layout_width="209dp"
+        android:layout_height="209dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/hombre3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapView"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
@@ -36,26 +36,17 @@
         app:layout_constraintVertical_bias="1.0" />
 
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="407dp"
-        android:layout_height="411dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="252dp"
+        android:layout_width="240dp"
         android:layout_height="210dp"
         android:background="#197A3C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/ivCliente"
-        app:layout_constraintTop_toBottomOf="@+id/mapView"
+
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
@@ -67,10 +58,10 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.584"
+            app:layout_constraintHorizontal_bias="0.423"
             app:layout_constraintStart_toStartOf="@+id/constraintLayout"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.024" />
+            app:layout_constraintVertical_bias="0.076" />
 
         <TextView
             android:id="@+id/tvDireccion"
@@ -81,10 +72,10 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.548"
+            app:layout_constraintHorizontal_bias="0.352"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNombre"
-            app:layout_constraintVertical_bias="0.021" />
+            app:layout_constraintVertical_bias="0.034" />
 
         <TextView
             android:id="@+id/tvTelefono"
@@ -95,19 +86,21 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.572"
+            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvDireccion"
-            app:layout_constraintVertical_bias="0.022" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/btnEntregar"
-            android:layout_width="131dp"
-            android:layout_height="108dp"
-            android:layout_marginTop="28dp"
+            android:layout_width="120dp"
+            android:layout_height="121dp"
+            android:layout_marginTop="4dp"
+
+            android:backgroundTint="#0D4521"
             android:text="MARCAR COMO ENTREGADO"
-            android:textColor="#8DECB0"
-            android:textSize="15sp"
+            android:textColor="#DDEAE2"
+            android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -115,17 +108,42 @@
 
         <Button
             android:id="@+id/btnPagar"
-            android:layout_width="121dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="28dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#0C2113"
             android:text="PAGAR"
-            android:textColor="#8DECB0"
+
+            android:textColor="#DDEAE2"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/btnEntregar"
             app:layout_constraintTop_toBottomOf="@+id/tvTelefono" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="456dp"
+        android:layout_height="500dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+        <fragment
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            class="com.google.android.gms.maps.SupportMapFragment"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

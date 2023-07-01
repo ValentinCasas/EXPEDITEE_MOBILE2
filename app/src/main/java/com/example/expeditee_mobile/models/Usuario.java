@@ -1,10 +1,12 @@
 package com.example.expeditee_mobile.models;
 
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
 
 public class Usuario implements Serializable {
 
-    private String id;
+    private int id;
     private String apellido;
     private String ciudad;
     private String clave;
@@ -18,11 +20,56 @@ public class Usuario implements Serializable {
     private String pais;
     private int rol;
     private Long telefono;
+    private int idPedido;
+    private Bitmap imagenFile;
+
 
     public Usuario() {
     }
 
-    public Usuario(String id, String apellido, String ciudad, String clave, String mail, String direccion, Long dni, String imagen, String latitud, String longitud, String nombre, String pais, int rol, Long telefono) {
+    public Usuario(String mail, String clave) {
+        this.mail = mail;
+        this.clave = clave;
+    }
+
+    public Usuario(int id, String apellido, String ciudad, String clave, String mail, String direccion, Long dni, String imagen, String latitud, String longitud, String nombre, String pais, int rol, Long telefono, int idPedido, Bitmap imagenFile) {
+        this.id = id;
+        this.apellido = apellido;
+        this.ciudad = ciudad;
+        this.clave = clave;
+        this.mail = mail;
+        this.direccion = direccion;
+        this.dni = dni;
+        this.imagen = imagen;
+        this.latitud = latitud;
+        this.longitud = longitud;
+        this.nombre = nombre;
+        this.pais = pais;
+        this.rol = rol;
+        this.telefono = telefono;
+        this.idPedido = idPedido;
+        this.imagenFile = imagenFile;
+    }
+
+    public Usuario(int id, String apellido, String ciudad, String clave, String mail, String direccion, Long dni, String imagen, String latitud, String longitud, String nombre, String pais, int rol, Long telefono, int idPedido) {
+        this.id = id;
+        this.apellido = apellido;
+        this.ciudad = ciudad;
+        this.clave = clave;
+        this.mail = mail;
+        this.direccion = direccion;
+        this.dni = dni;
+        this.imagen = imagen;
+        this.latitud = latitud;
+        this.longitud = longitud;
+        this.nombre = nombre;
+        this.pais = pais;
+        this.rol = rol;
+        this.telefono = telefono;
+        this.idPedido = idPedido;
+    }
+
+    public Usuario(int id, String apellido, String ciudad, String clave, String mail, String direccion, Long dni, String imagen, String latitud, String longitud, String nombre, String pais, int rol, Long telefono) {
         this.id = id;
         this.apellido = apellido;
         this.ciudad = ciudad;
@@ -39,11 +86,19 @@ public class Usuario implements Serializable {
         this.telefono = telefono;
     }
 
-    public String getId() {
+    public Bitmap getImagenFile() {
+        return imagenFile;
+    }
+
+    public void setImagenFile(Bitmap imagenFile) {
+        this.imagenFile = imagenFile;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -61,6 +116,14 @@ public class Usuario implements Serializable {
 
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
+    }
+
+    public int getIdPedido() {
+        return idPedido;
+    }
+
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
     }
 
     public String getClave() {

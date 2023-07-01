@@ -9,12 +9,12 @@ public class Mensaje implements Serializable {
     private String descripcion;
     private Usuario emisor;
     private Usuario receptor;
-    private Date fecha;
+    private String fecha;
 
     public Mensaje() {
     }
 
-    public Mensaje(int id, String descripcion, Usuario emisor, Usuario receptor, Date fecha) {
+    public Mensaje(int id, String descripcion, Usuario emisor, Usuario receptor, String fecha) {
         this.id = id;
         this.descripcion = descripcion;
         this.emisor = emisor;
@@ -54,11 +54,11 @@ public class Mensaje implements Serializable {
         this.receptor = receptor;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 }

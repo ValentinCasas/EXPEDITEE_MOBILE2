@@ -19,7 +19,7 @@ import com.example.expeditee_mobile.ui.pendientes.PendientesViewModel;
 
 public class LogoutFragment extends Fragment {
 
-    private LogoutViewModel mViewModel;
+    private LogoutViewModel mv;
     private FragmentLogoutBinding binding;
     public static LogoutFragment newInstance() {
         return new LogoutFragment();
@@ -29,16 +29,14 @@ public class LogoutFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentLogoutBinding.inflate(inflater, container, false);
+        mv = new ViewModelProvider(this).get(LogoutViewModel.class);
         View root = binding.getRoot();
+
+        mv.mostrarDialogoDeConfirmacion(this);
 
         return root;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(LogoutViewModel.class);
-        // TODO: Use the ViewModel
-    }
+
 
 }

@@ -16,11 +16,14 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EXPEDITEE_MOBILE"
         tools:targetApi="31"
         android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDSo2bCGW0hPR58xDxvadMb3qnsrSwnrNY" />
         <activity
             android:name=".LoginActivity2"
+            android:theme="@style/Theme.AppCompat"
             android:exported="false"/>
         <activity
             android:name=".MenuActivity"
@@ -29,6 +32,7 @@
             android:theme="@style/Theme.EXPEDITEE_MOBILE.NoActionBar" />
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

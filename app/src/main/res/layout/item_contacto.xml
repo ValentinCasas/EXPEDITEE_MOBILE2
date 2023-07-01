@@ -16,7 +16,7 @@
 
 
         <ImageView
-            android:id="@+id/ivCliente"
+            android:id="@+id/ivEmpleado"
             android:layout_width="73dp"
             android:layout_height="73dp"
             android:adjustViewBounds="true"
@@ -40,12 +40,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.061"
-            app:layout_constraintStart_toEndOf="@+id/ivCliente"
+            app:layout_constraintStart_toEndOf="@+id/ivEmpleado"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.506" />
 
         <Button
-            android:id="@+id/btnUbicacion"
+            android:id="@+id/btnIrAChat"
             android:layout_width="130dp"
             android:layout_height="129dp"
             android:paddingTop="12dp"

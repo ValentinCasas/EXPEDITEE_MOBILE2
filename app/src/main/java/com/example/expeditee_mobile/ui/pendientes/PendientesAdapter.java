@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,9 +14,12 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.expeditee_mobile.R;
+import com.example.expeditee_mobile.models.Pedido;
 import com.example.expeditee_mobile.models.Usuario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PendientesAdapter extends RecyclerView.Adapter<PendientesAdapter.ViewHolder>{
@@ -29,7 +34,6 @@ public class PendientesAdapter extends RecyclerView.Adapter<PendientesAdapter.Vi
         this.inflater = inflater;
     }
 
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -43,8 +47,7 @@ public class PendientesAdapter extends RecyclerView.Adapter<PendientesAdapter.Vi
         holder.nombre.setText(clientes.get(position).getNombre());
         holder.direccion.setText(clientes.get(position).getDireccion());
         holder.telefono.setText(clientes.get(position).getTelefono() + "");
-        //holder.nombre.setText(inmuebles.get(position).getPrecioInmueble() + "");
-        //Glide.with(context).load(inmuebles.get(position).getImagen()).into(holder.fotoInmueble);
+        Glide.with(context).load(clientes.get(position).getImagenFile()).into(holder.fotoCliente);
 
 
     }
@@ -57,6 +60,9 @@ public class PendientesAdapter extends RecyclerView.Adapter<PendientesAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView nombre, direccion, telefono;
+        Button btnUbicacion;
+        ImageView fotoCliente;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -64,18 +70,28 @@ public class PendientesAdapter extends RecyclerView.Adapter<PendientesAdapter.Vi
             nombre = itemView.findViewById(R.id.tvNombre);
             direccion = itemView.findViewById(R.id.tvDireccion);
             telefono = itemView.findViewById(R.id.tvTelefono);
+            btnUbicacion = itemView.findViewById(R.id.btnUbicacion);
+            fotoCliente = itemView.findViewById(R.id.ivCliente);
+
+            btnUbicacion.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             NavController navController = Navigation.findNavController(v);
+
             Usuario cliente = clientes.get(getAdapterPosition());
             Bundle bundle = new Bundle();
             bundle.putSerializable("cliente", cliente);
-            navController.navigate(R.id.nav_ubicacion, bundle);
+
+            int buttonId = v.getId();
+            if (buttonId == R.id.btnUbicacion) {
+                navController.navigate(R.id.nav_ubicacion, bundle);
+            }
         }
 
     }
+
 
 }
 

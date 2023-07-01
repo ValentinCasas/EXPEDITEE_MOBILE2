@@ -23,34 +23,40 @@
         android:layout_width="229dp"
         android:layout_height="75dp"
         android:layout_marginTop="76dp"
-        android:text="$ 5200.75"
+
         android:textColor="#0E2215"
         android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_expeditee" />
 
     <Button
         android:id="@+id/btnMarcarPagado"
-        android:layout_width="410dp"
-        android:layout_height="112dp"
+        android:layout_width="461dp"
+        android:layout_height="150dp"
         android:layout_marginTop="80dp"
+        android:backgroundTint="#BDF2D0"
         android:text="MARCAR COMO PAGADO"
+        android:textColor="#050505"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMonto" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMonto"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnMarcarEntregado"
-        android:layout_width="410dp"
-        android:layout_height="112dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="461dp"
+        android:layout_height="150dp"
+        android:backgroundTint="#8DECB0"
         android:text="IR A MARCAR COMO ENTREGADO"
+        android:textColor="#171313"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.68"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMarcarPagado" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMonto"
+        app:layout_constraintVertical_bias="0.463" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

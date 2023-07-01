@@ -103,4 +103,9 @@
             android:id="@+id/action_nav_contactos_to_nav_chat"
             app:destination="@id/nav_chat" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="com.example.expeditee_mobile.ui.logout.LogoutFragment"
+        android:label="Salir"
+        tools:layout="@layout/fragment_logout" />
 </navigation>

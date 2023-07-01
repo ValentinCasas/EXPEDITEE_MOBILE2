@@ -8,9 +8,17 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.expeditee_mobile.databinding.FragmentInicioBinding;
+import com.example.expeditee_mobile.models.Retroalimentacion;
+import com.example.expeditee_mobile.models.Usuario;
+import com.example.expeditee_mobile.ui.pendientes.PendientesAdapter;
+
+import java.util.ArrayList;
 
 public class InicioFragment extends Fragment {
 
@@ -25,12 +33,23 @@ public class InicioFragment extends Fragment {
         mv = new ViewModelProvider(this).get(InicioViewModel.class);
         View root = binding.getRoot();
 
+        mv.getRetroalimentacionMutable().observe(getViewLifecycleOwner(), new Observer<ArrayList<Retroalimentacion>>() {
+            @Override
+            public void onChanged(ArrayList<Retroalimentacion> retroalimentacion) {
+
+                RecyclerView rv = binding.rvLista;
+                GridLayoutManager grilla = new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false);
+                rv.setLayoutManager(grilla);
+                InicioAdapter adapter = new InicioAdapter(getContext(), retroalimentacion, getLayoutInflater());
+                rv.setAdapter(adapter);
+
+            }
+        });
+
+        mv.obtenerRetroalimentaciones();
+
         return root;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
+
 }

@@ -1,24 +1,28 @@
 package com.example.expeditee_mobile.models;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Pedido implements Serializable {
 
-    private int id;
     private String estado;
-    private Date fecha;
-    private ListaFavoritos lista;
+    private String fecha;
+    private int id;
+    private int idEmpleado;
+    private int idCliente;
     private double montoTotal;
 
     public Pedido() {
     }
 
-    public Pedido(int id, String estado, Date fecha, ListaFavoritos lista, double montoTotal) {
-        this.id = id;
+
+    public Pedido(String estado, String fecha, int id, int idEmpleado, int idCliente, double montoTotal) {
         this.estado = estado;
         this.fecha = fecha;
-        this.lista = lista;
+        this.id = id;
+        this.idEmpleado = idEmpleado;
+        this.idCliente = idCliente;
         this.montoTotal = montoTotal;
     }
 
@@ -38,20 +42,28 @@ public class Pedido implements Serializable {
         this.estado = estado;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    public ListaFavoritos getLista() {
-        return lista;
+    public int getIdEmpleado() {
+        return idEmpleado;
     }
 
-    public void setLista(ListaFavoritos lista) {
-        this.lista = lista;
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
+    }
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
     public double getMontoTotal() {
@@ -61,4 +73,7 @@ public class Pedido implements Serializable {
     public void setMontoTotal(double montoTotal) {
         this.montoTotal = montoTotal;
     }
+
+
+
 }
