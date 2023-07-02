@@ -22,7 +22,7 @@ import retrofit2.http.Path;
 
 public class ApiClientRetrofit {
 
-    private static final String PATH = "http://192.168.0.101:5250/api/";
+    private static final String PATH = "http://192.168.1.105:5250/api/";
     private static EndPointExpeditee endPointInmobiliaria;
 
     public static EndPointExpeditee getEndPointInmobiliaria() {
@@ -59,14 +59,14 @@ public class ApiClientRetrofit {
         @GET("Usuario/empleados")
         Call<ArrayList<Usuario>> obtenerEmpleados(@Header("Authorization") String token);
 
-        @GET("Usuario/obtenerPedidoPorId/{id}")
+        @GET("Pedido/obtenerPedidoPorId/{id}")
         Call<Pedido> obtenerPedidoPorId(@Header("Authorization") String token, @Path("id") int id);
 
 
-        @GET("Usuario/enviar/{idEmisor}/{idReceptor}/{mensaje}")
+        @GET("Mensaje/enviar/{idEmisor}/{idReceptor}/{mensaje}")
         Call<Mensaje> enviarMensaje(@Header("Authorization") String token, @Path("idEmisor") int idEmisor, @Path("idReceptor") int idReceptor, @Path("mensaje") String mensaje);
 
-        @GET("Usuario/mensajes/{idEmisor}/{idReceptor}")
+        @GET("Mensaje/mensajes/{idEmisor}/{idReceptor}")
         Call<ArrayList<Mensaje>> obtenerMensajes(@Header("Authorization") String token, @Path("idEmisor") int idEmisor, @Path("idReceptor") int idReceptor);
 
         @GET("Usuario/generarImgComprobante/{idPedido}/{montoTotal}/{nombreEmpleado}/{nombreCliente}/{mail}")
@@ -75,10 +75,10 @@ public class ApiClientRetrofit {
         @GET("Usuario/usuarioPorId/{id}")
         Call<Usuario> getUsuario(@Header("Authorization") String token, @Path("id") int id);
 
-        @GET("Usuario/actualizarEstadoPedido/{id}")
+        @GET("Pedido/actualizarEstadoPedido/{id}")
         Call<Void> actualizarEstadoPedido(@Header("Authorization") String token, @Path("id") int id);
 
-        @GET("Usuario/retroalimentaciones")
+        @GET("Retroalimentacion/retroalimentaciones")
         Call<ArrayList<Retroalimentacion>> obtenerRetroalimentaciones(@Header("Authorization") String token);
 
 
