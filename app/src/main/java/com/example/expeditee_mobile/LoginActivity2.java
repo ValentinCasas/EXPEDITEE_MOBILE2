@@ -44,8 +44,8 @@ public class LoginActivity2 extends AppCompatActivity {
             binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //mv.confirmaLogin(binding.etMail.getText().toString(),binding.etClave.getText().toString());
-                mv.confirmaLogin("pia@gmail.com", "Pia12345");
+                mv.confirmaLogin(binding.etMail.getText().toString(),binding.etClave.getText().toString());
+                //mv.confirmaLogin("pia@gmail.com", "Pia12345");
             }
         });
 

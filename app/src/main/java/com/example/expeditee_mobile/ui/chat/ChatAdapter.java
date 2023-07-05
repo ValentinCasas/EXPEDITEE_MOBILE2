@@ -57,25 +57,23 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ChatAdapter.ViewHolder holder, int position) {
+        String fechaTexto = mensajes.get(position).getFecha();
+
+        try {
+            SimpleDateFormat formatoEntrada = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+            SimpleDateFormat formatoSalida = new SimpleDateFormat("yyyy-MM-dd");
+
+            Date fecha = formatoEntrada.parse(fechaTexto);
+            String fechaFormateada = formatoSalida.format(fecha);
+
+            holder.fecha.setText(fechaFormateada);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         holder.nombre.setText(mensajes.get(position).getEmisor().getNombre() + " " + mensajes.get(position).getEmisor().getApellido());
         holder.descripcion.setText(mensajes.get(position).getDescripcion());
 
-        String fechaTexto = mensajes.get(position).getFecha();
-
-        // Convertir la cadena a un objeto Date
-        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date fechaMensaje;
-        try {
-            fechaMensaje = inputFormat.parse(fechaTexto);
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return;
-        }
-
-        SimpleDateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy");
-        String fechaFormateada = outputFormat.format(fechaMensaje);
-
-        holder.fecha.setText(fechaFormateada);
 
     }
 

@@ -31,7 +31,6 @@
             android:id="@+id/tvFecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2022/05/10"
             android:textColor="#66C689"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"

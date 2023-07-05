@@ -46,21 +46,23 @@ public class InicioAdapter extends RecyclerView.Adapter<InicioAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull InicioAdapter.ViewHolder holder, int position) {
-        holder.nombre.setText(retroalimentacion.get(position).getUsuario().getNombre() +" "+ retroalimentacion.get(position).getUsuario().getApellido() );
-        holder.descripcion.setText(retroalimentacion.get(position).getDescripcion());
 
         String fechaTexto = retroalimentacion.get(position).getFechaEnvio();
-        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date fechaMensaje;
+
         try {
-            fechaMensaje = inputFormat.parse(fechaTexto);
-        } catch (ParseException e) {
+            SimpleDateFormat formatoEntrada = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+            SimpleDateFormat formatoSalida = new SimpleDateFormat("yyyy-MM-dd");
+
+            Date fecha = formatoEntrada.parse(fechaTexto);
+            String fechaFormateada = formatoSalida.format(fecha);
+
+            holder.fecha.setText(fechaFormateada);
+        } catch (Exception e) {
             e.printStackTrace();
-            return;
         }
-        SimpleDateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy");
-        String fechaFormateada = outputFormat.format(fechaMensaje);
-        holder.fecha.setText(fechaFormateada);
+
+        holder.nombre.setText(retroalimentacion.get(position).getUsuario().getNombre() +" "+ retroalimentacion.get(position).getUsuario().getApellido() );
+        holder.descripcion.setText(retroalimentacion.get(position).getDescripcion());
 
     }
 
