@@ -10,3 +10,5 @@
 
 https://github.com/ValentinCasas/EXPEDITEE_MOBILE2/assets/101840863/fc923d48-a6eb-47ba-a189-69f749a9213f
 
+
+[documento_proyecto_final.docx](https://github.com/ValentinCasas/EXPEDITEE_MOBILE2/files/13255789/documento_proyecto_final.docx)
